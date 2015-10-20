@@ -1,4 +1,4 @@
-# batchwords
+# batchexport
 
 This program operates on batches of audio/video files, listing all audio files with the format ##_##.wav (ex. 01_06.wav) or all video files with the format ##_##_video.mp4 (ex. 01_06_video.mp4). The matches can then be exported (i.e. copied) to a new folder, which should be an external drive. 
 
