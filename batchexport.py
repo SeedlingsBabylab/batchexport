@@ -59,22 +59,26 @@ class MainWindow:
                                          text="Select",
                                          command=self.select_files)
 
-        self.file_select_button.grid(row=4, column=1)
+        self.file_select_button.grid(row=2, column=2)
 
+        self.file_selectall_button = Button(self.main_frame,
+                                         text="Select All",
+                                         command=self.select_all)
 
+        self.file_selectall_button.grid(row=4, column=2)
 
         self.file_list_clear_button = Button(self.main_frame,
                                              text="Clear All",
                                              command=self.directory_clear)
 
-        self.file_list_clear_button.grid(row=8, column=1)
+        self.file_list_clear_button.grid(row=5, column=2)
 
 
         self.file_selected_clear_button = Button(self.main_frame,
                                                  text="Clear Selected",
                                                  command=self.clear_selected)
 
-        self.file_selected_clear_button.grid(row=5, column=1)
+        self.file_selected_clear_button.grid(row=3, column=2)
 
 
         self.files_selected_label = Label(self.main_frame, text="files selected", fg="green")
@@ -87,7 +91,7 @@ class MainWindow:
 
         # Final export button
         self.export_csv = Button(self.main_frame, text="Export", command=self.export_csv)
-        self.export_csv.grid(row=2, column=4, columnspan=2)
+        self.export_csv.grid(row=5, column=1)
 
 
         #self.file_tree = ttk.Treeview(self.main_frame)
@@ -209,6 +213,9 @@ class MainWindow:
             self.files_selected_label.grid(row=6, column=1)
         print self.selected_csv_files
 
+    def select_all(self):
+        self.file_listbox.select_set(0, END)
+        
     def clear_selected(self):
 
         self.file_listbox.select_clear(0, END)
